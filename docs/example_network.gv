@@ -1,0 +1,26 @@
+// An example SaaS network
+digraph {
+	A
+	B
+	C
+	D
+	E
+	F
+	G
+	F -> A
+	A -> B
+	C -> B
+	A -> C
+	G -> D
+	C -> D
+	A -> E
+	B -> E
+	C -> E
+	D -> E
+	A -> F
+	D -> F
+	E -> F
+	D -> G
+	C -> G
+	B -> G
+}
