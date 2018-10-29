@@ -1,5 +1,5 @@
-// An example SaaS network
-digraph {
+// SaaS network
+digraph base_network {
 	A
 	B
 	C
