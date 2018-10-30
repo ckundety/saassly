@@ -47,7 +47,7 @@ class Blockchain:
         self.chain.append(block)
         return block
 
-    def new_transaction(self, sender, recipient, data, transactionId):
+    def new_transaction(self, sender, recipient, data, transactionIndex):
         """
         Creates a new transaction to go into the next mined Block
         :param sender: Address of the Sender
@@ -59,7 +59,7 @@ class Blockchain:
         self.current_transactions.append({
             'sender': sender,
             'recipient': recipient,
-            'transactionId': transactionId,
+            'transactionIndex': transactionIndex,
             'data': data,
         })
 
@@ -190,12 +190,12 @@ def new_transaction():
     values = request.get_json()
 
     # Check that the required fields are in the POST'ed data
-    required = ['sender', 'recipient', 'transactionId', 'data']
+    required = ['sender', 'recipient', 'transactionIndex', 'data']
     if not all(k in values for k in required):
         return 'Missing values', 400
 
     # Create a new Transaction
-    index = blockchain.new_transaction(values['sender'], values['recipient'], values['transactionId'],values['data'])
+    index = blockchain.new_transaction(values['sender'], values['recipient'], values['transactionIndex'],values['data'])
 
     response = {'message': f'Transaction will be added to Block {index}'}
     return jsonify(response), 201
