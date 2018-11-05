@@ -81,4 +81,8 @@ g.edge('F', 'F-ledger', style='dashed')
 g.edge('G', 'G-ledger', style='dashed')
 
 
+for node in g.nodes:
+    with g.subgraph(name=node.)
+
+
 g.render('n_tier_network_init.gv', view=True)
